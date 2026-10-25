@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo "[Husky] Running pre-push hook: full project linting check..."
+npm run lint
