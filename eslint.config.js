@@ -4,7 +4,16 @@ import react from 'eslint-plugin-react';
 import reactHooks from 'eslint-plugin-react-hooks';
 
 export default [
-  { ignores: ['dist', 'node_modules', 'cypress.config.js', 'cypress/**'] },
+  {
+    ignores: [
+      'dist',
+      'node_modules',
+      'cypress.config.js',
+      'cypress/**',
+      'tailwind.config.js',
+      'postcss.config.js',
+    ],
+  },
   {
     files: ['**/*.{js,jsx}'],
     languageOptions: {
@@ -28,7 +37,8 @@ export default [
       ...reactHooks.configs.recommended.rules,
       'react/jsx-no-target-blank': 'off',
       'react/prop-types': 'off',
-      'no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
+      'react/no-unescaped-entities': 'off',
+      'no-unused-vars': ['warn', { argsIgnorePattern: '^_', varsIgnorePattern: '^React$' }],
       'no-console': ['warn', { allow: ['warn', 'error'] }],
     },
   },
